@@ -1,0 +1,9 @@
+{
+  "actorSpecification": 1,
+  "name": "multi-portal-job-aggregator",
+  "title": "Multi-Portal Job Aggregator",
+  "description": "Searches 10–15 fresh jobs (≤10 days old) from LinkedIn, Indeed, Naukri, Shine, Monster India and Google Jobs based on role, skills, experience and location.",
+  "version": "0.1",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile"
+}

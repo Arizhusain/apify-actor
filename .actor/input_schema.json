@@ -1,0 +1,78 @@
+{
+  "title": "Multi-Portal Job Aggregator Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "jobRole": {
+      "title": "Job Role",
+      "type": "string",
+      "description": "Job title to search for (e.g. 'Python Developer', 'Data Scientist').",
+      "editor": "textfield",
+      "example": "Python Developer"
+    },
+    "skills": {
+      "title": "Required Skills",
+      "type": "array",
+      "description": "List of skills to match against job listings.",
+      "editor": "stringList",
+      "example": ["Python", "Django", "REST API", "PostgreSQL"]
+    },
+    "yearsOfExperience": {
+      "title": "Years of Experience",
+      "type": "integer",
+      "description": "Minimum years of experience to filter by.",
+      "minimum": 0,
+      "maximum": 30,
+      "default": 3,
+      "editor": "number"
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "description": "City or region to search in (e.g. 'Bangalore', 'Mumbai', 'Remote').",
+      "editor": "textfield",
+      "example": "Bangalore"
+    },
+    "maxDaysOld": {
+      "title": "Max Days Since Posted",
+      "type": "integer",
+      "description": "Only include jobs posted within this many days.",
+      "minimum": 1,
+      "maximum": 30,
+      "default": 10,
+      "editor": "number"
+    },
+    "jobsPerPortal": {
+      "title": "Jobs Per Portal",
+      "type": "integer",
+      "description": "Maximum number of jobs to collect from each portal.",
+      "minimum": 5,
+      "maximum": 50,
+      "default": 15,
+      "editor": "number"
+    },
+    "portals": {
+      "title": "Portals to Search",
+      "type": "array",
+      "description": "Which job portals to include. Supported values: linkedin, naukri.",
+      "editor": "stringList",
+      "default": ["linkedin", "naukri"],
+      "example": ["linkedin", "naukri"]
+    },
+    "useProxy": {
+      "title": "Use Apify Proxy",
+      "type": "boolean",
+      "description": "Enable Apify residential proxies when running on the Apify platform.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "fetchFullDescription": {
+      "title": "Fetch Full Job Description",
+      "type": "boolean",
+      "description": "Visit each job's detail page to collect the full description. Slower but richer data.",
+      "default": false,
+      "editor": "checkbox"
+    }
+  },
+  "required": ["jobRole", "location"]
+}

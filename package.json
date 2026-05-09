@@ -1,0 +1,24 @@
+{
+  "name": "multi-portal-job-aggregator",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Apify actor that aggregates jobs from LinkedIn, Indeed, Naukri, Shine, Monster, and Google Jobs",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "./node_modules/.bin/tsc",
+    "dev": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@apify/tsconfig": "^0.1.0",
+    "@types/node": "^20.0.0",
+    "apify": "^3.2.2",
+    "cheerio": "^1.0.0",
+    "crawlee": "^3.11.0",
+    "playwright": "^1.44.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0"
+  }
+}
